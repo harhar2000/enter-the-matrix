@@ -30,7 +30,7 @@ def enter_the_matrix(custom_delay=0.075):
 def link_welcome(name, custom_delay=0.02):
     width = get_terminal_width() 
     paragraphs = [
-        f"\n\n\nHey {name}, I'm Link, nice to have you onboard.  As Operators, we're the mission control for our crew inside the Matrix. We provide real-time support, from navigation to technical hacks, ensuring the team has everything they need for their missions.",
+        f"\n\n\nHey {name}, I'm Link, nice to have you onboard. As Operators, we're the mission control for our crew inside the Matrix. We provide real-time support, from navigation to technical hacks, ensuring the team has everything they need for their missions.",
         "Our role encompasses guiding through the Matrix, monitoring for threats and hacking systems to stay ahead of our enemies. We manipulate the Matrix's code to assist our crew, whether that's unlocking doors or accessing crucial data.",
         "I'll teach you to instantly upload knowledge directly to our team's minds. They need to know Kung Fu or how to fly a helicopter? We have them covered.",
         "When situations escalate, we coordinate extractions: finding the nearest exit points to pull our team out safely. We also manage the inventory of weapons and tools, ensuring our team have everything and anything they need.",
