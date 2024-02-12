@@ -40,7 +40,8 @@ def link_welcome(name, custom_delay=0.02):
         "I'll teach you to instantly upload knowledge directly to our team's minds. They need to know Kung Fu or how to fly a helicopter? We have them covered.",
         "When situations escalate, we coordinate extractions: finding the nearest exit points to pull our team out safely. We also manage the inventory of weapons and tools, ensuring our team have everything and anything they need.",
         "Though we might not be on the frontline, our expertise and support are indispensable. We're their eyes and ears, keeping them connected, guided, and backed up every step of the way. Without us, there's no bridge to the real world or the vital support our rebels rely on.",
-        "Type 'python two.py' into your console to activate your training program."
+        "Type 'python two.py' into your console to activate your training program.",
+        " "
     ]
 
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
