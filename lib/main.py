@@ -1,8 +1,8 @@
-import time
-import textwrap
-import os
-import sys
-import select
+import time                 # Delay between printing each character
+import textwrap             # Wrap text to fit terminal
+import os                   # Functionalities for interacting with OS. e.g. finding out terminal size
+import sys                  # Interacting with interpreter. e.g. stdin checks to detect immediate user action
+import select               # Script detects for keyboard input without halting execution.
 
 def print_slowly(text, delay=0.075):           # Prints text slowly, character by character
     for char in text:
@@ -17,7 +17,7 @@ def get_terminal_width(default=70):
     try:
         columns, _ = os.get_terminal_size()
         return columns
-    except OSError:
+    except OSError:                                 # Default size if cannot determine
         return default
 
 def enter_the_matrix(custom_delay=0.075):
