@@ -15,3 +15,5 @@ def reduce_string(string):
     return string[1:len(string)-1]
 
 print(reduce_string("hellooo"))
+
+## Have a file containing tests. Potentially unittests at bottom of file. File def if necc. User writes code. 
