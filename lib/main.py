@@ -48,4 +48,7 @@ def link_welcome(name, custom_delay=0.02):
 
     print_slowly(wrapped_text, delay=custom_delay)
 
-enter_the_matrix()
+# enter_the_matrix()
+
+if __name__ == "__main__": 
+    enter_the_matrix()
