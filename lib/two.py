@@ -32,13 +32,24 @@ def link_two(name, custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
         f"{name}, In the Matrix, everything is code, by writing functions, we perform specific operations to aid our cause. Think of a function as a way to send a command to the Matrix, asking it to perform a task or calculation for us.\n",
-        "First, you need to tell the Matrix what you're planning to do by defining the function. Use the def keyword 'def' followed by the <name_of_your_function> and parentheses '()'. Inside these parentheses, we specify parameters or bits of information your function needs to perform its task.",
-        "For example if one of our team needed you to open a door for them in The Matrix, you would type 'def open_door(code)', try it!"
+        "First, you need to tell the Matrix what you're planning to do by defining the function. Use the def keyword 'def' followed by the <name_of_your_function>, parentheses '()' and finish it up with a colon. Inside these parentheses, we specify parameters or bits of information your function needs to perform its task.",
+        "For example if one of our team needed you to open a door for them in The Matrix, you would type 'def open_door(code):', try it!"
     ]
-
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
-
     print_slowly(wrapped_text, delay=custom_delay)
+
+    while True:
+        user_input = input("Type here: \n\n").strip()  #  Capture input and strip() to remove extra whitespace
+
+        if user_input != "def open_door(code):":
+            print_slowly("\n\nIt seems you've made a mistake. Remember, to define this function, type 'def open_door(code):'", delay=custom_delay)    ### Reword this with AI infite times?
+        else:
+            print_slowly("\n\nExcellent! You've successfully defined a function in the Matrix. You're one step closer to becoming a proficient operator.", delay=custom_delay)
+            break
+
+
+
+
 
 
 if __name__ == "__main__":
