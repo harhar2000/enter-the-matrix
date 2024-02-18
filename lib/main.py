@@ -49,9 +49,6 @@ def link_welcome(name, custom_delay=0.02):
 
     print_slowly(wrapped_text, delay=custom_delay)
 
-def name_function(name):
-    name  ### Trying to establish name here to pass to future files
-
 if __name__ == "__main__": 
     name = enter_the_matrix()
     with open("namefile.txt", "w") as file:

@@ -32,7 +32,7 @@ def get_name_from_file():
 
 def link_two(custom_delay=0.02):
     width = get_terminal_width()
-    paragraphs = ["\n\nLeaving notes for your fellow rebels is crucial. These notes or comments, are marked by the '#' character which the machines cannot decipher. Messages within the code for human eyes only, explaining its function without impacting execution",
+    paragraphs = ["Leaving notes for your fellow rebels is crucial. These notes or comments, marked by the '#' character cannot be deciphered by the machines. # are messages within the code for human eyes only, explaining function without impacting execution",
         "# This is a comment. Nothing past the # will run. Use them to explain the code helping others and yourself understand later",
         "Onto something more tangible: Function are mini-programs, reusable blocks of code performing specific tasks. A tool crafted once and used as needed",
         "Here's a simple function:",
@@ -42,10 +42,9 @@ def link_two(custom_delay=0.02):
         "```",
         "Let's break it down:",
         "Name: Every function has a name, e.g. add_one(). It's how we identify and call the function to do its job.",
-        "Parameter: Functions often require inputs to work with. num is our function's parameter, the piece of data it needs to perform its task.",
-        "Body: The body processes the input and returns an output.",
+        "Parameter: Functions often require inputs to work with. num is our function's parameter, the data needed to perform its task.",
         "Our add_one() function takes an input (num) and adds one to it. It's a clear demonstration of how functions accept input, process it and return an output.",
-        "To unleash a function, you call it by its name and provide any required input, like so:",
+        "To unleash a function, call it by its name and provide any required input, like so:",
         "```",
         "add_one(4)  # Calls the function with 4 as the input",
         "```",
