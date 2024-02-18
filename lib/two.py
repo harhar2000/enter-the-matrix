@@ -31,19 +31,22 @@ def get_name_from_file():
 def link_two(name, custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
-        f"{name}, Create a function that removes the first and last characters of a string. Use one parameter - the original string. Don't worry about strings with less than two characters\n",
-        " "
+        f"{name}, In the Matrix, everything is code, by writing functions, we perform specific operations to aid our cause. Think of a function as a way to send a command to the Matrix, asking it to perform a task or calculation for us.\n",
+        "First, you need to tell the Matrix what you're planning to do by defining the function. Use the def keyword 'def' followed by the <name_of_your_function> and parentheses '()'. Inside these parentheses, we specify parameters or bits of information your function needs to perform its task.",
+        "For example if one of our team needed you to open a door for them in The Matrix, you would type 'def open_door(code)', try it!"
     ]
 
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
 
     print_slowly(wrapped_text, delay=custom_delay)
 
-def reduce_string(string):
-    return string[1:len(string)-1]
-
-print(reduce_string("hellooo")) # DECIDE VARIABLE
 
 if __name__ == "__main__":
     name = get_name_from_file()
     link_two(name)
+
+
+    # def reduce_string(string):
+#     return string[1:len(string)-1]
+
+# print(reduce_string("hellooo")) # DECIDE VARIABLE
