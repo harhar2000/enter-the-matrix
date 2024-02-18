@@ -26,68 +26,44 @@ def get_name_from_file():
         name = file.read().strip()
     return name
 
+
 ## FILE BEGIN
 
 
 def link_two(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
-        "\nNow, let's continue and infuse this function with logic.",
+        "In the vast, complex world of the Matrix, leaving notes for your fellow rebels is crucial. These notes, or comments, are marked by the # character. They're like whispers in the code, meant for human eyes only. The Machines can't read them. They're our way of leaving messages, explaining what a piece of code does, without affecting its execution.",
+        "# This is a comment. Python doesn't run this line.",
+        "# Use comments to explain what your code does, making it easier for others (and yourself) to understand later.",
+        "Now, onto something more tangible: functions. A function is a mini-program, a reusable block of code designed to perform a specific task. Think of it as a tool you craft once and then use as needed, modifying the Matrix with precision.",
+        "Here's a simple function:",
         "```",
-        "def hack_door(code):",
-        "    if code == 'Zion2024':",
-        "        return 'Door unlocked.'",
-        "    else:",
-        "        return 'Access denied.'",
+        "def add_one(num):",
+        "num = num + 1"
+        "  return num",
         "```",
-        "This code snippet is our digital key. The `if` statement checks if the input code matches 'Zion2024'. If it does, the Matrix acknowledges our success and the door will unlock. If not, access is denied.",
-        "To use this function, you call it with a potential passcode:",
+        "Let's break it down:",
+        "Name: Every function has a name, in this case, add_one. It's how we identify and call upon the function to do its job.",
+        "Parameter: Functions often require input to work with. num is our function's parameter, the piece of data it needs to perform its task.",
+        "Body: The body of the function, processes the input and returns an output. In Python, indentation marks the body, setting it apart from the rest.",
+        "Our add_one function takes an input (num) and simply adds one to it. It's a clear demonstration of how functions accept input, process it and return an output.",
+        "To unleash a function's power, you call it by its name and provide any required input, like so:",
         "```",
-        "result = hack_door('Zion2024')",
-        "print(result)  # This prints: Door unlocked.",
-        "result = hack_door('1999')",
-        "print(result)  # This prints: Access denied.",
-        "```"]
+        "result = add_one(4)  # Calls the function with 4 as the input",
+        "```\n",
+        "Here, 4 is passed to add_one, taking the place of num inside the function. The function then adds one and returns 5, completing its task.",
+        "Want to see the function in action? Let's use print to make its work visible:",
+        "```",
+        "print(\"add_one(4)) # returns: 5",
+        "```",
+        "This line will display the result of our function when called with 4 as the argument, proving that even the simplest functions can be powerful tools in the right hands.",
+        "Remember, in the Matrix, knowledge is power. These basics allow you to start manipulating the code around you, bending the Matrix to our will. Keep practicing, and soon you'll be writing code that can unlock doors, bending physics and much more. This is just the beginning."
+    ]
 
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Format text to fit the terminal width
-
     print_slowly(wrapped_text, delay=custom_delay)
-
-
-
-
-
-# def link_three(name, custom_delay=0.02):
-#     width = get_terminal_width()
-#     paragraphs = [
-#         f"{name}, In the Matrix, everything is code, by writing functions, we perform specific operations to aid our cause. Think of a function as a way to send a command to the Matrix, asking it to perform a task or calculation for us.\n",
-
-
-#         "First, you need to tell the Matrix what you're planning to do by defining the function. Use the def keyword 'def' followed by the <name_of_your_function>, parentheses '()' and finish it up with a colon ':'. Inside these parentheses, we specify parameters or bits of information your function needs to perform its task.",
-#         "For example if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
-#     ]
-#     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
-#     print_slowly(wrapped_text, delay=custom_delay)
-
-#     while True:
-#         user_input = input("Type here: \n\n").strip()  #  Capture input and strip() to remove extra whitespace
-
-#         if user_input != "def unlock_door(code):":
-#             print_slowly("\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'", delay=custom_delay)    ### Reword this with AI infite times?
-#         else:
-#             print_slowly("\n\nExcellent! You're one step closer to becoming a proficient operator.", delay=custom_delay)
-#             break
-
-
-
 
 if __name__ == "__main__":
     name = get_name_from_file()
     link_two()
-    # link_three(name)
-
-
-    # def reduce_string(string):
-#     return string[1:len(string)-1]
-
-# print(reduce_string("hellooo")) # DECIDE VARIABLE
