@@ -32,7 +32,9 @@ def get_name_from_file():
 
 def link_two(custom_delay=0.02):
     width = get_terminal_width()
-    paragraphs = ["Leaving notes for your fellow rebels is crucial. These notes or comments, marked by the '#' character cannot be deciphered by the machines. # are messages within the code for human eyes only, explaining function without impacting execution",
+    paragraphs = ["",
+        f"Ready {name}?", 
+        "Leaving notes for your fellow rebels is crucial. These notes or comments, marked by the '#' character cannot be deciphered by the machines. # are messages within the code for human eyes only, explaining function without impacting execution",
         "# This is a comment. Nothing past the # will run. Use them to explain the code helping others and yourself understand later",
         "Onto something more tangible: Function are mini-programs, reusable blocks of code performing specific tasks. A tool crafted once and used as needed",
         "Here's a simple function:",
