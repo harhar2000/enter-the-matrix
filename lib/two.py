@@ -1,5 +1,4 @@
 from main import get_terminal_width
-from main import name_function
 import time                 # Delay between printing each character
 import textwrap             # Wrap text to fit terminal
 import os                   # Functionalities for interacting with OS. e.g. finding out terminal size
@@ -22,11 +21,12 @@ def get_terminal_width(default=70):
     except OSError:                                 # Default size if cannot determine
         return default
 
+def get_name_from_file():
+    with open("namefile.txt", "r") as file:
+        name = file.read().strip()
+    return name
 
-## Training Program
-## Create Function 
-    
-name_function()    
+## FILE BEGIN
 
 def link_two(name, custom_delay=0.02):
     width = get_terminal_width()
@@ -39,13 +39,11 @@ def link_two(name, custom_delay=0.02):
 
     print_slowly(wrapped_text, delay=custom_delay)
 
-
-get_terminal_width()
-link_two()
-
 def reduce_string(string):
     return string[1:len(string)-1]
 
-print(reduce_string("hellooo"))
+print(reduce_string("hellooo")) # DECIDE VARIABLE
 
-## Have a file containing tests. Potentially unittests at bottom of file. File def if necc. User writes code. 
+if __name__ == "__main__":
+    name = get_name_from_file()
+    link_two(name)

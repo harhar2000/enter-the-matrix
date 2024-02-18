@@ -53,4 +53,6 @@ def name_function(name):
     name  ### Trying to establish name here to pass to future files
 
 if __name__ == "__main__": 
-    enter_the_matrix()
+    name = enter_the_matrix()
+    with open("namefile.txt", "w") as file:
+        file.write(name)
