@@ -37,7 +37,7 @@ def link_two(custom_delay=0.02):
         f"Ready {name}?", 
         "Leaving notes or comments for your fellow rebels is crucial. These comments, marked by the '#' character cannot be deciphered by the machines. # are messages for human eyes only, to explain function without impacting execution",
         "# This is a comment. Nothing past the # will run. Use # to explain the code",
-        "Show me you understand. Add a comment to the following line of code."
+        "Show me you understand. Add a comment to explain the following line of code."
         ]
     
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
