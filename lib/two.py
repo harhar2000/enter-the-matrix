@@ -95,9 +95,6 @@ def next_section(custom_delay=0.02):
             break
 
 
-
-
-
 def two_final_section(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs =[
