@@ -58,21 +58,21 @@ def link_ten(custom_delay=0.02):
 
 
 # def link_three(name, custom_delay=0.02):
-#     width = get_terminal_width()
-#     paragraphs = [
-#         f"{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
-#     ]
-#     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
-#     print_slowly(wrapped_text, delay=custom_delay)
+    width = get_terminal_width()
+    paragraphs = [
+        f"{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
+    ]
+    wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
+    print_slowly(wrapped_text, delay=custom_delay)
 
-#     while True:
-#         user_input = input("Type here: \n\n").strip()  #  Capture input and strip() to remove extra whitespace
+    while True:
+        user_input = input("Type here: \n\n").strip()  #  Capture input and strip() to remove extra whitespace
 
-#         if user_input != "def unlock_door(code):":
-#             print_slowly("\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'", delay=custom_delay)    ### Reword this with AI infite times?
-#         else:
-#             print_slowly("\n\nExcellent! You're one step closer to becoming a proficient operator.", delay=custom_delay)
-#             break
+        if user_input != "def unlock_door(code):":
+            print_slowly("\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'", delay=custom_delay)    ### Reword this with AI infite times?
+        else:
+            print_slowly("\n\nExcellent! You're one step closer to becoming a proficient operator.", delay=custom_delay)
+            break
 
 
 
