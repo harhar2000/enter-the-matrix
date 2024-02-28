@@ -4,6 +4,7 @@ import textwrap             # Wrap text to fit terminal
 import os                   # Functionalities for interacting with OS. e.g. finding out terminal size
 import sys                  # Interacting with interpreter. e.g. stdin checks to detect immediate user action
 import select               # Script detects for keyboard input without halting execution.
+import re                   # Regular Expression for try again or well done options 
 
 def print_slowly(text, delay=0.075):           # Prints text slowly, character by character
     for char in text:
@@ -81,13 +82,13 @@ def next_section(custom_delay=0.02):
         "Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!"
     ]
 
-    wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
+    wrapped_text = '\n\n'.join( [ textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
     print_slowly(wrapped_text, delay=custom_delay)
 
     while True:
         user_input = input().lstrip()  #  Capture input and strip() to remove extra whitespace
 
-        if not user_input.startswith("print(add_one(4))"):
+        if not re.fullmatch("print\(add_one\(\W*4\W*\)\)", user_input): # Look for other ways to simplify this logic <-, wrap that code into a function and pass paramter into i, call that function when needed
             print_slowly("\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets", delay=custom_delay)    ### Reword this with AI infite times?
         else:
             print("\n5")
@@ -95,7 +96,7 @@ def next_section(custom_delay=0.02):
             break
 
 
-def two_final_section(custom_delay=0.02):
+def two_final_section(custom_delay=0.02) :
     width = get_terminal_width()
     paragraphs =[
         "print() displays our functions result when called, proving even simple functions can be powerful tools in the right hands.",
