@@ -1,61 +1,29 @@
-from main import get_terminal_width
-import time                 # Delay between printing each character
-import textwrap             # Wrap text to fit terminal
-import os                   # Functionalities for interacting with OS. e.g. finding out terminal size
-import sys                  # Interacting with interpreter. e.g. stdin checks to detect immediate user action
-import select               # Script detects for keyboard input without halting execution.
-import re                   # Regular Expression for try again or well done options 
+from common import *
 
-def print_slowly(text, delay=0.075):           # Prints text slowly, character by character
-    for char in text:
-        if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:   # Check for Enter key input
-            line = sys.stdin.readline()
-            delay = 0.001                           # Reduce delay 
-        print(char, end='', flush=True)
-        time.sleep(delay)
-    print()
-
-def get_terminal_width(default=70):
-    try:
-        columns, _ = os.get_terminal_size()
-        return columns
-    except OSError:                                 # Default size if cannot determine
-        return default
-
-def get_name_from_file():
-    with open("namefile.txt", "r") as file:
-        name = file.read().strip()
-    return name
-
-
-## FILE BEGIN
-
-
-def link_two(custom_delay=0.02):
+def comments(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
         "",
         f"Ready {name}?", 
-        "Leaving notes or comments for your fellow rebels is crucial. These comments, marked by the '#' character cannot be deciphered by the machines. # are messages for human eyes only, to explain function without impacting execution",
+        "Leaving notes or comments for your team is crucial. These comments, marked by the '#' character cannot be deciphered by machines. # are messages for human eyes only, to explain function without impacting execution",
         "# This is a comment. Nothing past the # will run. Use # to explain the code",
         "Show me you understand. Add a comment to explain the following line of code."
         ]
     
-    wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
-    print_slowly(wrapped_text, delay=custom_delay)
+    wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
+
 
     while True:
         user_input = input("\n total = x + y ").lstrip()  #  Capture input and strip() to remove extra whitespace
 
         if not user_input.startswith("#"):
-            print_slowly("\n\nRemember, you're just adding a # followed by an explanation of what the line of code does", delay=custom_delay)    ### Reword this with AI infite times?
+            print_slowly("\n\nRemember, you're just adding a # followed by an explanation of what the line of code does", delay=custom_delay)    ### Reword this with AI to be different each time it prints?
         else:
             print_slowly("\n\nWell done, you created your first comment", delay=custom_delay)
             break
 
 
-
-def next_section(custom_delay=0.02):
+def first_function(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
         "",
@@ -82,17 +50,16 @@ def next_section(custom_delay=0.02):
         "Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!"
     ]
 
-    wrapped_text = '\n\n'.join( [ textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Wrap each paragraph to fit terminal and join with double newlines
-    print_slowly(wrapped_text, delay=custom_delay)
+    wrap_and_print_text(paragraphs, width=width, delay=custom_delay) 
 
     while True:
         user_input = input().lstrip()  #  Capture input and strip() to remove extra whitespace
 
-        if not re.fullmatch("print\(add_one\(\W*4\W*\)\)", user_input): # Look for other ways to simplify this logic <-, wrap that code into a function and pass paramter into i, call that function when needed
+        if not re.fullmatch("print\(add_one\(\W*4\W*\)\)", user_input): # Look for other ways to simplify this logic <-, wrap that code into a function and pass paramter into it, call that function when needed
             print_slowly("\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets", delay=custom_delay)    ### Reword this with AI infite times?
         else:
-            print("\n5")
-            print_slowly("\n\nExcellent work! add_one() takes the number 4, adds 1 and because of the print() function, prints 5\n", delay=custom_delay)
+            print("\n5") # Look into having it actually print 5 as a result of input rather than printing 5 because they got the right answer
+            print_slowly("\n\nExcellent work! add_one() taes the number 4, adds 1 and because of the print() function, prints 5\n", delay=custom_delay)
             break
 
 
@@ -104,13 +71,11 @@ def two_final_section(custom_delay=0.02) :
         "\n\n Enter 'python three.py' into your terminal to continue"
     ]
 
-    wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])  # Format text to fit the terminal width
-
-    print_slowly(wrapped_text, delay=custom_delay)
+    wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
 
 if __name__ == "__main__":
     name = get_name_from_file()
-    link_two()
-    next_section()
+    comments()
+    first_function()
     two_final_section()
