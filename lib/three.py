@@ -3,18 +3,18 @@ from common import *
 def link_ten(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
-        "\nNow, let's continue and infuse this function with logic.",
+        "\nLet's continue with another example and infuse this function with logic.",
         "```",
         "def hack_door(code):",
-        "    if code == 'Zion2024':",
+        "    if code == '110799':",
         "        return 'Door unlocked.'",
         "    else:",
         "        return 'Access denied.'",
         "```",
-        "This code snippet is our digital key. The `if` statement checks if the input code matches 'Zion2024'. If it does, the Matrix acknowledges our success and the door will unlock. If not, access is denied.",
+        "This code snippet is our digital key. The `if` statement checks if the input code matches '110799'. If it does, the Matrix acknowledges our success and the door will unlock. If not, access is denied.",
         "To use this function, you call it with a potential passcode:",
         "```",
-        "result = hack_door('Zion2024')",
+        "result = hack_door('110799')",
         "print(result)  # This prints: Door unlocked.",
         "result = hack_door('1999')",
         "print(result)  # This prints: Access denied.",

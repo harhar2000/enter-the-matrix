@@ -27,7 +27,7 @@ def first_function(custom_delay=0.02):
     width = get_terminal_width()
     paragraphs = [
         "",
-        "Now onto something more tangible: Function are mini-programs, reusable blocks of code that perform specific tasks. A tool crafted once and used as needed",
+        "Onto something more tangible: Function are mini-programs, reusable blocks of code that perform specific tasks. A tool crafted once and used as needed",
         "Here's a simple function:",
         "",
         "```",
@@ -58,7 +58,7 @@ def first_function(custom_delay=0.02):
         if not re.fullmatch("print\(add_one\(\W*4\W*\)\)", user_input): # Look for other ways to simplify this logic <-, wrap that code into a function and pass paramter into it, call that function when needed
             print_slowly("\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets", delay=custom_delay)    ### Reword this with AI infite times?
         else:
-            print("\n5") # Look into having it actually print 5 as a result of input rather than printing 5 because they got the right answer
+            print("\n5") # Actually print 5 as a result of input rather than printing 5 because it says to in code
             print_slowly("\n\nExcellent work! add_one() taes the number 4, adds 1 and because of the print() function, prints 5\n", delay=custom_delay)
             break
 
