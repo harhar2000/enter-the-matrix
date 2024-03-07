@@ -1,7 +1,8 @@
 import subprocess
 import requests
 
-
+### The aim of the file is to connect to a GPT taking on the role of The Oracle and to be able to connect to the Oracle at anytime during 
+#    The code for coding help 
 ## CREATE FREE API KEY
 # https://platform.openai.com/api-keys
 
