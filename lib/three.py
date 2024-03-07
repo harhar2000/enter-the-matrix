@@ -1,7 +1,6 @@
 from common import *
 
 def link_ten(custom_delay=0.02):
-    width = get_terminal_width()
     paragraphs = [
         "\nLet's continue with another example and infuse this function with logic.",
         "```",
@@ -27,7 +26,6 @@ def link_ten(custom_delay=0.02):
 
 
 # def link_three(name, custom_delay=0.02):
-    width = get_terminal_width()
     paragraphs = [
         f"{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
     ]
@@ -46,6 +44,7 @@ def link_ten(custom_delay=0.02):
 
 
 if __name__ == "__main__":
+    width = get_terminal_width() 
     name = get_name_from_file()
     link_ten()
     # link_three(name)

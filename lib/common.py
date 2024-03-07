@@ -28,7 +28,11 @@ def get_terminal_width(default=70):
     except OSError:                                 # Default size if cannot determine
         return default
 
-def get_name_from_file():
-    with open("namefile.txt", "r") as file:
-        name = file.read().strip()
-    return name
+def get_name_from_file(file_path="namefile.txt"):
+    try:
+        with open(file_path, "r") as file:
+            name = file.read().strip()
+        return name
+    except FileNotFoundError:
+        print("File not found. Ensure the file path is correct.")  # REWRITE as user won't have access to filepath
+        return None

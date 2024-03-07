@@ -1,7 +1,6 @@
 from common import *
 
 def comments(custom_delay=0.02):
-    width = get_terminal_width()
     paragraphs = [
         "",
         f"Ready {name}?", 
@@ -24,7 +23,6 @@ def comments(custom_delay=0.02):
 
 
 def first_function(custom_delay=0.02):
-    width = get_terminal_width()
     paragraphs = [
         "",
         "Onto something more tangible: Function are mini-programs, reusable blocks of code that perform specific tasks. A tool crafted once and used as needed",
@@ -64,7 +62,6 @@ def first_function(custom_delay=0.02):
 
 
 def two_final_section(custom_delay=0.02) :
-    width = get_terminal_width()
     paragraphs =[
         "print() displays our functions result when called, proving even simple functions can be powerful tools in the right hands.",
         f"Remember {name}, in the Matrix, knowledge is power. These basics allow you to start manipulating the code around you, bending the Matrix to our will. Keep practicing and soon you'll be writing code that can unlock doors, bending physics and more. This is just the beginning.",
@@ -75,6 +72,7 @@ def two_final_section(custom_delay=0.02) :
 
 
 if __name__ == "__main__":
+    width = get_terminal_width() 
     name = get_name_from_file()
     comments()
     first_function()
