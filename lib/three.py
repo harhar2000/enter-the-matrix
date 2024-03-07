@@ -1,6 +1,6 @@
 from common import *
 
-def link_ten(custom_delay=0.02):
+def second_function(custom_delay=0.02):
     paragraphs = [
         "\nLet's continue with another example and infuse this function with logic.",
         "```",
@@ -10,6 +10,7 @@ def link_ten(custom_delay=0.02):
         "    else:",
         "        return 'Access denied.'",
         "```",
+        "Note the indentation. Indented code means that it belongs within the code of the line above",
         "This code snippet is our digital key. The `if` statement checks if the input code matches '110799'. If it does, the Matrix acknowledges our success and the door will unlock. If not, access is denied.",
         "To use this function, you call it with a potential passcode:",
         "```",
@@ -24,14 +25,14 @@ def link_ten(custom_delay=0.02):
 
 # def link_three(name, custom_delay=0.02):
     paragraphs = [
-        f"{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
+        f"\n{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
     ]
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
     def validate_input(prompt, validate_function, error_message, success_message, custom_delay=0.02):
         while True:
             user_input = input(prompt).strip()  # Capture input and strip() to remove extra whitespace
-            
+
             if validate_function(user_input):
                 print_slowly(success_message, delay=custom_delay)
                 break
@@ -52,11 +53,4 @@ def link_ten(custom_delay=0.02):
 if __name__ == "__main__":
     width = get_terminal_width() 
     name = get_name_from_file()
-    link_ten()
-    # link_three(name)
-
-
-    # def reduce_string(string):
-#     return string[1:len(string)-1]
-
-# print(reduce_string("hellooo")) # DECIDE VARIABLE
+    second_function()

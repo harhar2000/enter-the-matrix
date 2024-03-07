@@ -16,7 +16,7 @@ def get_last_command_output():
 
 def analyse_with_oracle(command_output):
     api_url = "https://api.theoracle.com/analyse"
-    api_key = "your_api_key_here"  # Consider retrieving this from an environment variable for security
+    api_key = "your_api_key_here"  # Consider retrieving this from environment variable for security
     
     headers = {
         "Authorization": f"Bearer {api_key}",
