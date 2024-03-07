@@ -25,3 +25,8 @@ Once the cloning process is complete, you can navigate into the newly created di
 ```bash
 cd enter-the-matrix
 ```
+
+Once in the correct directory, Run:
+```bash
+python main.py
+```
