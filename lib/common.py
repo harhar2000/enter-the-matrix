@@ -28,11 +28,22 @@ def get_terminal_width(default=70):
     except OSError:                                 # Default size if cannot determine
         return default
 
-def get_name_from_file(file_path="namefile.txt"):
-    try:
-        with open(file_path, "r") as file:
-            name = file.read().strip()
-        return name
-    except FileNotFoundError:
-        print("File not found. Ensure the file path is correct.")  # REWRITE as user won't have access to filepath
-        return None
+def get_name_from_file(operation="read", name=None, file_path="namefile.txt"):
+    if operation == "write" and name:
+        with open(file_path, "w") as file:
+            file.write(name)
+    elif operation == "read":
+        try:
+            with open(file_path, "r") as file:
+                return file.read().strip()
+        except FileNotFoundError:
+            print("Name file not found.")
+            return None
+
+def validate_user_input(prompt, validation_function, error_message, custom_delay=0.02):
+    while True:
+        user_input = input(prompt).lstrip()  # Capture input and strip() to remove extra whitespace
+        if validation_function(user_input):
+            return user_input
+        else:
+            print_slowly(error_message, delay=custom_delay)

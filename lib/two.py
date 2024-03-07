@@ -11,15 +11,13 @@ def comments(custom_delay=0.02):
     
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
-
-    while True:
-        user_input = input("\n total = x + y ").lstrip()  #  Capture input and strip() to remove extra whitespace
-
-        if not user_input.startswith("#"):
-            print_slowly("\n\nRemember, you're just adding a # followed by an explanation of what the line of code does", delay=custom_delay)    ### Reword this with AI to be different each time it prints?
-        else:
-            print_slowly("\n\nWell done, you created your first comment", delay=custom_delay)
-            break
+    validate_user_input(
+        prompt="\n total = x + y ",
+        validation_function=lambda user_input: user_input.startswith("#"),
+        error_message="\n\nRemember, you're just adding a # followed by an explanation of what the line of code does",
+        custom_delay=custom_delay
+    )
+    print_slowly("\n\nWell done, you created your first comment", delay=custom_delay)
 
 
 def first_function(custom_delay=0.02):
@@ -43,22 +41,21 @@ def first_function(custom_delay=0.02):
         "add_one(4)     # Calls the function with 4 as the input",
         "```",
         "",
-        "Here, 4 is passed to add_one. The function adds one, returning 5.",
-        "We can mix functions together. To put the function in action and see 'add_one(4)' printed in your terminal, put it within the 'print()' functions brackets. ",
-        "Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!"
+        "Here, 4 is passed to add_one. The function adds one, returning 5.\n",
     ]
-
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay) 
 
-    while True:
-        user_input = input().lstrip()  #  Capture input and strip() to remove extra whitespace
+    prompt = "We can mix functions together. To put the function in action and see 'add_one(4)' printed in your terminal, put it within the 'print()' functions brackets. Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!\n"
+    print_slowly(prompt, delay=custom_delay)
 
-        if not re.fullmatch("print\(add_one\(\W*4\W*\)\)", user_input): # Look for other ways to simplify this logic <-, wrap that code into a function and pass paramter into it, call that function when needed
-            print_slowly("\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets", delay=custom_delay)    ### Reword this with AI infite times?
-        else:
-            print("\n5") # Actually print 5 as a result of input rather than printing 5 because it says to in code
-            print_slowly("\n\nExcellent work! add_one() taes the number 4, adds 1 and because of the print() function, prints 5\n", delay=custom_delay)
-            break
+# return 5, fix spacing,
+    validate_user_input(
+        prompt="",
+        validation_function=lambda user_input: re.fullmatch(r"print\(add_one\(\W*4\W*\)\)", user_input) is not None,
+        error_message="\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets",
+        custom_delay=custom_delay
+    )
+    print_slowly("\n\nExcellent work! add_one() takes the number 4, adds 1 and because of the print() function, prints 5", delay=custom_delay)
 
 
 def two_final_section(custom_delay=0.02) :

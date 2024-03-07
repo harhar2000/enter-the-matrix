@@ -22,24 +22,30 @@ def link_ten(custom_delay=0.02):
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
 
-
-
-
 # def link_three(name, custom_delay=0.02):
     paragraphs = [
         f"{name}, if one of our team needed you to unlock a door for them in The Matrix, you would type 'def unlock_door(code):', try it!"
     ]
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
-    while True:
-        user_input = input("Type here: \n\n").strip()  #  Capture input and strip() to remove extra whitespace
+    def validate_input(prompt, validate_function, error_message, success_message, custom_delay=0.02):
+        while True:
+            user_input = input(prompt).strip()  # Capture input and strip() to remove extra whitespace
+            
+            if validate_function(user_input):
+                print_slowly(success_message, delay=custom_delay)
+                break
+            else:
+                print_slowly(error_message, delay=custom_delay)
 
-        if user_input != "def unlock_door(code):":
-            print_slowly("\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'", delay=custom_delay)    ### Reword this with AI infite times?
-        else:
-            print_slowly("\n\nExcellent! You're one step closer to becoming a proficient operator.", delay=custom_delay)
-            break
+    def matches_unlock_door_function(input):
+        return input == "def unlock_door(code):"
 
+    prompt = "Type here: \n\n"
+    error_message = "\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'"
+    success_message = "\n\nExcellent! You're one step closer to becoming a proficient operator."
+
+    validate_input(prompt, matches_unlock_door_function, error_message, success_message)
 
 
 
