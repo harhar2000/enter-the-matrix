@@ -18,7 +18,8 @@ def second_function(custom_delay=0.02):
         "print(result)  # This prints: Door unlocked.",
         "result = hack_door('1999')",
         "print(result)  # This prints: Access denied.",
-        "```"]
+        "```",
+        ""]
 
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay)
 
