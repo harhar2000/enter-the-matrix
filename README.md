@@ -12,3 +12,16 @@ Remember, all I'm offering is the truth. Nothing more.
 
 - Morpheus 
 
+## To Get Started...
+
+Navigate to the directory where you want to clone the repository. 
+Run:
+```bash
+git clone https://github.com/harhar2000/enter-the-matrix.git
+```
+
+This command creates a local copy of the repository on your machine in a directory named enter-the-matrix.
+Once the cloning process is complete, you can navigate into the newly created directory:
+```bash
+cd enter-the-matrix
+```
