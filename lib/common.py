@@ -9,9 +9,10 @@ def print_slowly(text, delay=0.075):           # Prints text slowly, character b
     enter_pressed = False
     for char in text:
         if not enter_pressed:
+            # The next line is for mac, get a conditional for windows and mac that works for both
             if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:   # Check for Enter key input
                 sys.stdin.readline()
-                delay = 0.001                           # Reduce delay 
+                delay = 0.001                           # Reduce delay
                 enter_pressed = True
         print(char, end='', flush=True)
         time.sleep(delay)
