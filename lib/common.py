@@ -4,19 +4,33 @@ import os                   # Functionalities for interacting with OS. e.g. find
 import sys                  # Interacting with interpreter. e.g. stdin checks to detect immediate user action
 import select               # Script detects for keyboard input without halting execution.
 import re                   # Regular Expression for try again or well done options 
+import msvcrt
 
 def print_slowly(text, delay=0.075):           # Prints text slowly, character by character
     enter_pressed = False
     for char in text:
         if not enter_pressed:
             # The next line is for mac, get a conditional for windows and mac that works for both
-            if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:   # Check for Enter key input
-                sys.stdin.readline()
+            if enter_pressed_for_platform():
                 delay = 0.001                           # Reduce delay
                 enter_pressed = True
         print(char, end='', flush=True)
         time.sleep(delay)
     print()
+
+def enter_pressed_for_platform() -> bool:
+    if sys.platform.startswith('win'):
+        if msvcrt.kbhit():  # Check if a key has been pressed
+            key = msvcrt.getch()  # Get the pressed key
+            if key == b'\r':  # Check if the key is the Enter key
+                return True
+
+        return False
+
+    else: # mac/UNIX
+        enter_pressed = sys.stdin in select.select([sys.stdin], [], [], 0)[0]
+        if enter_pressed:
+             sys.stdin.readline() # unsure what this does, but looks like it's needed for Mac not windows
 
 def wrap_and_print_text(paragraphs, width=70, delay=0.075):
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])
