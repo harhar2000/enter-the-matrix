@@ -39,21 +39,29 @@ def first_function(custom_delay=0.02):
         "```",
         "add_one(4)     # Calls the function with 4 as the input",
         "```",
-        "Here, 4 is passed into add_one. The function adds one, returning 5.",
+        "Here, 4 is passed into add_one. The function adds one, returning 5.\n\n\n",
+        "",
     ]
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay) 
-
-    prompt = "\n\nWe can mix functions together. To put the function in action and see 'add_one(4)' printed in your terminal, put it within the 'print()' functions brackets. Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!\n"
+    # change prompt below to account for 0-9 potential number
+    prompt = "nWe can mix functions together. To put the add_one() in action put a number of your choice within add_one() and place it within the 'print()' functions brackets. Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!\n"
     wrapped_prompt = textwrap.fill(prompt, width=width)
     print_slowly(wrapped_prompt, delay=custom_delay)
 
-    validate_user_input(
-        prompt="",
-        validation_function=lambda user_input: re.fullmatch(r"\s*print\s*\(\s*add_one\s*\(\s*4\s*\)\s*\)\s*", user_input) is not None,
-        error_message="\n\nDon't worry! Take add_one(4) and put it as it is within the brackets of the print() function. You should have a total of 4 brackets\n",
+
+    test = r"\s*print\s*\(\s*add_one\s*\(\s*([1-9][0-9]*)\s*\)\s*\)\s*"
+    
+    user_input = validate_user_input(
+        prompt="", 
+        validation_function=lambda user_input: re.fullmatch(test, user_input) is not None,
+        error_message=f"\n\nDon't worry! Take 'add_one()', put your number within it's brackets and put all of that within the brackets of the print() function. You should have a total of 4 brackets\n",
         custom_delay=custom_delay
-    )
-    print_slowly("\n\n5\n\nExcellent work! add_one() takes the number 4, adds 1 and because of the print() function, prints 5\n", delay=custom_delay)
+    ) 
+    match = re.fullmatch(test, user_input).groups()[0]
+    total = int(match)
+    match = total + 1 
+    
+    print_slowly(f"\n\n{match}\n\nExcellent work! {user_input} takes the number {total}, adds 1 and because of the print() function, prints {match}\n", delay=custom_delay)
 
 
 def two_final_section(custom_delay=0.02) :

@@ -30,7 +30,7 @@ def enter_pressed_for_platform() -> bool:
     else: # mac/UNIX
         enter_pressed = sys.stdin in select.select([sys.stdin], [], [], 0)[0]
         if enter_pressed:
-             sys.stdin.readline() # unsure what this does, but looks like it's needed for Mac not windows
+             sys.stdin.readline() 
 
 def wrap_and_print_text(paragraphs, width=70, delay=0.075):
     wrapped_text = '\n\n'.join([textwrap.fill(paragraph, width=width) for paragraph in paragraphs])
