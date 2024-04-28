@@ -11,4 +11,4 @@ def test_reduce_string_works():
     # test combinations of regex are working. with/without spaces in differint positions. different num of spaces. upper/lowercase
     # test inputs 
     # test name doesn't have numbers
-    # test name carries over across pages
+    # test get_name_from_file in common. Different names. Give it expected output, test they match.

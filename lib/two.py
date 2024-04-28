@@ -61,6 +61,7 @@ def first_function(custom_delay=0.02):
     total = int(match)
     match = total + 1 
     
+    
     print_slowly(f"\n\n{match}\n\nExcellent work! {user_input} takes the number {total}, adds 1 and because of the print() function, prints {match}\n", delay=custom_delay)
 
 
