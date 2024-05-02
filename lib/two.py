@@ -44,7 +44,7 @@ def first_function(custom_delay=0.02):
     ]
     wrap_and_print_text(paragraphs, width=width, delay=custom_delay) 
     # change prompt below to account for 0-9 potential number
-    prompt = "nWe can mix functions together. To put the add_one() in action put a number of your choice within add_one() and place it within the 'print()' functions brackets. Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!\n"
+    prompt = "We can mix functions together. To put the add_one() in action put a number of your choice within add_one() and place it within the 'print()' functions brackets. Remember to keep the number of brackets equal. For every opening bracket there needs to be a closing bracket!\n"
     wrapped_prompt = textwrap.fill(prompt, width=width)
     print_slowly(wrapped_prompt, delay=custom_delay)
 

@@ -45,7 +45,7 @@ def second_function(custom_delay=0.02):
 
     prompt = "Type here: \n\n"
     error_message = "\n\nA small mistake. Remember, to define this function, type 'def unlock_door(code):'"
-    success_message = "\n\nExcellent! You're one step closer to becoming a proficient operator."
+    success_message = "\n\nExcellent! You're one step closer to becoming a proficient operator. Enter 'python four.py' into the terminal to continue to your next training program"
 
     validate_input(prompt, matches_unlock_door_function, error_message, success_message)
 

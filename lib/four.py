@@ -1,5 +1,15 @@
 from common import *
 
+'''
+Good work {name}, we're near the end of your training program. After that you'll on your own, leading your team.
+We've uploaded Comments, how to define functions, their arguments and how to mix functions together through your headjack. 
+
+
+
+'''
+
+
+
 def first_function():
     paragraphs = ["\n Let's try defining the function unlock_door(code)"]
 
